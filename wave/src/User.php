@@ -68,7 +68,7 @@ class User extends \TCG\Voyager\Models\User implements JWTSubject
     public function hasAnnouncements(){
         // Get the latest Announcement
         $latest_announcement = Announcement::orderBy('created_at', 'DESC')->first();
-        return !$this->announcements->contains($latest_announcement->id);
+        return empty($latest_announcement->id) ? false : !$this->announcements->contains($latest_announcement->id);
     }
 
     public function announcements(){
