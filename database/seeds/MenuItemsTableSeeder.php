@@ -12,8 +12,6 @@ class MenuItemsTableSeeder extends Seeder
      */
     public function run()
     {
-
-
         \DB::table('menu_items')->delete();
 
         \DB::table('menu_items')->insert(array (
@@ -257,22 +255,6 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'wave.dashboard',
                 'parameters' => 'null',
             ),
-            15 =>
-            array (
-                'id' => 16,
-                'menu_id' => 2,
-                'title' => 'Resources',
-                'url' => '#_',
-                'target' => '_self',
-                'icon_class' => 'info',
-                'color' => '#000000',
-                'parent_id' => NULL,
-                'order' => 2,
-                'created_at' => '2017-11-28 14:49:36',
-                'updated_at' => '2017-11-28 15:11:13',
-                'route' => NULL,
-                'parameters' => '',
-            ),
             16 =>
             array (
                 'id' => 19,
@@ -305,54 +287,6 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => NULL,
                 'parameters' => '',
             ),
-            18 =>
-            array (
-                'id' => 21,
-                'menu_id' => 2,
-                'title' => 'Documentation',
-                'url' => '/docs',
-                'target' => '_self',
-                'icon_class' => NULL,
-                'color' => '#000000',
-                'parent_id' => 16,
-                'order' => 1,
-                'created_at' => '2017-11-28 15:08:56',
-                'updated_at' => '2017-11-28 15:09:14',
-                'route' => NULL,
-                'parameters' => '',
-            ),
-            19 =>
-            array (
-                'id' => 22,
-                'menu_id' => 2,
-                'title' => 'Videos',
-                'url' => 'https://devdojo.com/series/wave',
-                'target' => '_blank',
-                'icon_class' => NULL,
-                'color' => '#000000',
-                'parent_id' => 16,
-                'order' => 2,
-                'created_at' => '2017-11-28 15:09:22',
-                'updated_at' => '2017-11-28 15:09:25',
-                'route' => NULL,
-                'parameters' => '',
-            ),
-            20 =>
-            array (
-                'id' => 23,
-                'menu_id' => 2,
-                'title' => 'Support',
-                'url' => 'https://devdojo.com/forums/category/wave',
-                'target' => '_blank',
-                'icon_class' => 'lifesaver',
-                'color' => '#000000',
-                'parent_id' => NULL,
-                'order' => 3,
-                'created_at' => '2017-11-28 15:09:56',
-                'updated_at' => '2018-03-31 18:22:05',
-                'route' => NULL,
-                'parameters' => '',
-            ),
             21 =>
             array (
                 'id' => 25,
@@ -362,7 +296,7 @@ class MenuItemsTableSeeder extends Seeder
                 'target' => '_self',
                 'icon_class' => NULL,
                 'color' => '#000000',
-                'parent_id' => 16,
+                'parent_id' => NULL,
                 'order' => 3,
                 'created_at' => '2018-03-31 18:22:02',
                 'updated_at' => '2018-03-31 18:22:08',
@@ -498,7 +432,5 @@ class MenuItemsTableSeeder extends Seeder
                 'parameters' => NULL,
             ),
         ));
-
-
     }
 }
