@@ -1,4 +1,4 @@
-# AMW
+# AMW - social activity
 
 
 # Install
