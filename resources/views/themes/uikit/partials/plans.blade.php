@@ -18,12 +18,13 @@
         <div class="plan uk-grid @if($plan_active){{ 'plan-active' }}@endif" data-plan="{{ $plan->plan_id }}">
             <div class="uk-width-1-2 plan-left">
                 <h3 class="uk-card-title uk-text-left uk-margin-remove-bottom">{{ $plan->name }}</h3>
-                <p class="uk-text-left uk-text-muted uk-margin-remove-bottom uk-margin-remove-top">
-                    {{ $plan->price }}
-                    <span class="plan-features" id="plan-{{ strtolower(str_slug($plan->name)) . $plan->id }}">Features</span>
+                @if($plan->plan_id !== 'basic')
+                    <p class="uk-text-left uk-text-muted uk-margin-remove-bottom uk-margin-remove-top">
+                        {{ $plan->price }}
+                        <span class="plan-features" id="plan-{{ strtolower(str_slug($plan->name)) . $plan->id }}">Features</span>
 
-                </p>
-
+                    </p>
+                @endif
             </div>
             <div class="uk-width-1-2 plan-right">
                 <div class="uk-text-right uk-align-right">

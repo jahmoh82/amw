@@ -18,18 +18,19 @@
         <div class="plan row @if($plan_active){{ 'plan-active' }}@endif" data-plan="{{ $plan->plan_id }}">
             <div class="col-md-6 plan-left">
                 <h3 class="text-left">{{ $plan->name }}</h3>
-                <p class="text-left pt-1 mb-0">
-                    {{ $plan->price }}
-                    @php
-                        $plan_features_html = '<ul class="feature-list">';
-                        foreach($features as $feature):
-                            $plan_features_html .= '<li>' . $feature . '</li>';
-                        endforeach;
-                        $plan_features_html .= '</ul>';
-                    @endphp
-                    <span class="plan-features" data-trigger="hover" data-container="body" data-html="true" data-toggle="popover" data-placement="bottom" data-content="{{ $plan_features_html }}">Features</span>
-                </p>
-
+                @if($plan->plan_id !== 'basic')
+                    <p class="text-left pt-1 mb-0">
+                        {{ $plan->price }}
+                        @php
+                            $plan_features_html = '<ul class="feature-list">';
+                            foreach($features as $feature):
+                                $plan_features_html .= '<li>' . $feature . '</li>';
+                            endforeach;
+                            $plan_features_html .= '</ul>';
+                        @endphp
+                        <span class="plan-features" data-trigger="hover" data-container="body" data-html="true" data-toggle="popover" data-placement="bottom" data-content="{{ $plan_features_html }}">Features</span>
+                    </p>
+                @endif
             </div>
             <div class="col-md-6 plan-right">
                 <div class="text-right">
