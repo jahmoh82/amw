@@ -38,15 +38,26 @@
 
                         </div>
 
-                        <div class="uk-margin">
+                        <div class="uk-margin" style="position: relative">
                             <label class="uk-form-label">Password</label>
                             <input id="password" type="password" class="uk-input{{ $errors->has('password') ? ' uk-form-danger' : '' }}" name="password" value="{{ old('password') }}" required>
-
+                            <button class="uk-button uk-button-small uk-float-right" id="show-pass" onclick="showPass()" style="position: absolute;right: 2px;border:0;border-radius: 3px;height: 36px;margin-top: 2px;" type="button">show password</button>
                             @if ($errors->has('password'))
                                 <div class="uk-alert-danger" uk-alert>
                                     {{ $errors->first('password') }}
                                 </div>
                             @endif
+                            <script>
+                                function showPass(){
+                                    if(document.getElementById("password").getAttribute("type") === 'password'){
+                                        document.getElementById("password").setAttribute("type", "text");
+                                        document.getElementById("show-pass").innerHTML= "hide password";
+                                    }else{
+                                        document.getElementById("password").setAttribute("type", "password");
+                                        document.getElementById("show-pass").innerHTML= "show password";
+                                    }
+                                }
+                            </script>
                         </div>
 
                         <div class="uk-margin">
