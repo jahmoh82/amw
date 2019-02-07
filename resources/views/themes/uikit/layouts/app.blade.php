@@ -43,7 +43,8 @@
     @endif
 
     <!-- Styles -->
-    <link href="{{ asset('themes/uikit/css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('themes/uikit/css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('themes/uikit/css/custom_app.css') }}" rel="stylesheet">
 </head>
 <body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif">
     <div id="app" data-sticky-wrap>
@@ -194,6 +195,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('themes/uikit/js/app.js') }}"></script>
+    <script src="{{ asset('themes/uikit/js/custom_app.js') }}"></script>
 
     @yield('javascript')
 

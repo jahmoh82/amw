@@ -44,6 +44,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('themes/bootstrap/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('themes/bootstrap/css/custom_app.css') }}" rel="stylesheet">
 </head>
 <body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif">
 
@@ -199,6 +200,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('themes/bootstrap/js/app.js') }}"></script>
+    <script src="{{ asset('themes/bootstrap/js/custom_app.js') }}"></script>
 
     @yield('javascript')
 

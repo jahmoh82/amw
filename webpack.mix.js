@@ -7,14 +7,34 @@ let mix = require('laravel-mix');
  |
  | Mix provides a clean, fluent API for defining some Webpack build steps
  | for your Laravel application. By default, we are compiling the Sass
- | file for your application, as well as bundling up your JS files.
+ | file for the application as well as bundling up all the JS files.
  |
  */
 
-mix
-    .js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css');
+/**
+ * uikit
+ */
+// mix.setPublicPath('public/themes/uikit/')
+//     .less('resources/views/themes/uikit/assets/less/app.less', 'css')
+//     .js('resources/views/themes/uikit/assets/js/app.js', 'js')
+//     .options({
+//         processCssUrls: false
+//     });
+//
 
+/**
+ * bootstrap
+ */
+mix.setPublicPath('public/themes/bootstrap/')
+    .js('resources/views/themes/bootstrap/assets/js/custom_app.js', 'public/themes/bootstrap/js/custom_app.js')
+    .styles('resources/views/themes/bootstrap/assets/css/custom_app.css', 'public/themes/bootstrap/css/custom_app.css')
+    .options({
+        processCssUrls: false,
+        purifyCss: true
+    });
+
+// mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
+//
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.
