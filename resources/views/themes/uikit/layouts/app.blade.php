@@ -5,7 +5,7 @@
     @if(isset($seo->title))
         <title>{{ $seo->title }}</title>
     @else
-        <title>{{ setting('site.title', 'Laravel Wave') . ' - ' . setting('site.description', 'The Software as a Service Starter Kit built on Laravel & Voyager') }}</title>
+        <title>{{ setting('site.title', 'Amw - Active my way') . ' - ' . setting('site.description', 'Social Playing field') }}</title>
     @endif
 
     <meta charset="utf-8">
@@ -146,7 +146,7 @@
 
                         </div>
 
-                        <div class="uk-margin uk-width-xlarge">{{ setting('site.description', 'The Software as a Service Starter Kit built on Laravel & Voyager') }}</div>
+                        <div class="uk-margin uk-width-xlarge">{{ setting('site.description', 'Social Playing field') }}</div>
 
                     </div>
 

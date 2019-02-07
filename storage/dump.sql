@@ -946,7 +946,7 @@ LOCK TABLES `settings` WRITE;
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`)
 VALUES
 	(1,'site.title','Site Title','Wave','','text',1,'Site'),
-	(2,'site.description','Site Description','The Software as a Service Starter Kit built on Laravel & Voyager','','text',2,'Site'),
+	(2,'site.description','Site Description','Social Playing field','','text',2,'Site'),
 	(4,'site.google_analytics_tracking_id','Google Analytics Tracking ID',NULL,'','text',4,'Site'),
 	(5,'admin.bg_image','Admin Background Image','','','image',5,'Admin'),
 	(6,'admin.title','Admin Title','Wave','','text',1,'Admin'),

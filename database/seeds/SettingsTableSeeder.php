@@ -33,7 +33,7 @@ class SettingsTableSeeder extends Seeder
                 'id' => 2,
                 'key' => 'site.description',
                 'display_name' => 'Site Description',
-                'value' => 'The Software as a Service Starter Kit built on Laravel & Voyager',
+                'value' => 'Social Playing field',
                 'details' => '',
                 'type' => 'text',
                 'order' => 2,
