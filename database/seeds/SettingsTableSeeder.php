@@ -77,7 +77,7 @@ class SettingsTableSeeder extends Seeder
                 'id' => 7,
                 'key' => 'admin.description',
                 'display_name' => 'Admin Description',
-                'value' => 'Create some waves and build your next great idea',
+                'value' => 'build your next great idea',
                 'details' => '',
                 'type' => 'text',
                 'order' => 2,
@@ -148,7 +148,8 @@ class SettingsTableSeeder extends Seeder
 "default" : "email",
 "options" : {
 "email": "Email Address",
-"username": "Username"
+"username": "Username",
+"all": "Email, Username, Phone"
 }
 }',
                 'type' => 'select_dropdown',
@@ -188,7 +189,7 @@ class SettingsTableSeeder extends Seeder
                 'id' => 16,
                 'key' => 'billing.card_upfront',
                 'display_name' => 'Require Credit Card Up Front',
-                'value' => '1',
+                'value' => '0',
                 'details' => '{
 "on" : "Yes",
 "off" : "No",
@@ -203,7 +204,7 @@ class SettingsTableSeeder extends Seeder
                 'id' => 17,
                 'key' => 'billing.trial_days',
                 'display_name' => 'Trial Days when No Credit Card Up Front',
-                'value' => '14',
+                'value' => '360',
                 'details' => NULL,
                 'type' => 'text',
                 'order' => 12,
