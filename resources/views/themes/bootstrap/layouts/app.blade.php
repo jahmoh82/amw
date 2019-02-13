@@ -54,6 +54,10 @@
             <div class="container">
                 <a class="navbar-brand" href="/"><img src="{{ Voyager::image(theme('logo')) }}" style="height:35px;"></a>
 
+                <div class="input-group py-1 px-2">
+                    <input class="form-control form-control-dark" type="text" placeholder="Search here..." aria-label="Search">
+                </div>
+
 
                 @if(!Auth::guest())
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,6 +74,7 @@
                 <button class="navbar-toggler @if(Auth::guest()){{ 'nonauth' }}@endif" type="button" data-toggle="collapse" data-target="#guestMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
                 <div class="collapse navbar-collapse navbar-right" id="guestMenu">
                     <ul class="navbar-nav ml-auto">
                         @if(Auth::guest())
@@ -107,7 +112,7 @@
                                             <span>{{ Auth::user()->username }}</span>
                                         </div>
                                     </div>
-                                    <div class="user-dropdown-plan"><div class="badge badge-success badge-plan"  style="background:#{{ stringToColorCode(auth()->user()->role->display_name) }}">{{ auth()->user()->role->display_name }}</div></div>
+                                    <div class="user-dropdown-plan text-center"><div class="badge badge-success badge-plan"  style="background:#{{ stringToColorCode(auth()->user()->role->display_name) }}">{{ auth()->user()->role->display_name }}</div></div>
                                     @if( auth()->user()->onTrial() && !auth()->user()->subscription('main') )
                                         <a href="{{ route('wave.settings', 'plans') }}" class="dropdown-item"><span uk-icon="icon: cloud-upload"></span>Upgrade My Account</a>
                                     @endif
