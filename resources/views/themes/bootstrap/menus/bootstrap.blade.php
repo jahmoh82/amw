@@ -60,10 +60,7 @@
         endif;
 
     @endphp
-
-    <li class="{{ $listItemClass }} nav-item">
-
-
+    <li class="{{ $listItemClass }} nav-item{{ Request::is(str_replace('/', '', $item->link()).'*') ? ' active' : '' }}">
         <a href="{{ url($item->link()) }}" target="{{ $item->target }}" style="{{ $styles }}" {!! isset($linkAttributes) ? $linkAttributes : '' !!}>
             {!! $icon !!}
             <span>{{ $item->title }}</span>
