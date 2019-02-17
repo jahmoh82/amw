@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-
-    @if(isset($seo->title))
-        <title>{{ $seo->title }}</title>
+    @if(!empty($seo->title))
+        <title>{{ $seo->title }} ee</title>
     @else
         <title>{{ setting('site.title', 'Amw - Active my way') . ' - ' . setting('site.description', 'Social Playing field') }}</title>
     @endif
