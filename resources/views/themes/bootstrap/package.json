@@ -19,7 +19,8 @@
         "less-loader": "^4.1.0",
         "lodash": "^4.17.11",
         "popper.js": "^1.12",
-        "vue": "^2.5.7"
+        "vue": "^2.5.7",
+        "ajv": "^6.9.1"
     },
     "dependencies": {
         "croppie": "^2.6.2",
