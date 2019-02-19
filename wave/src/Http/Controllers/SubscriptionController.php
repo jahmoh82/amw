@@ -29,7 +29,7 @@ class SubscriptionController extends Controller
         try{
             try {
 
-                $plan = Plan::where('name', '=', $request->plan)->first();
+                $plan = Plan::where('plan_id', '=', $request->plan)->first();
 
                 if(!isset($plan->id)){
                     return back()->withInput($request->all())->with(['note' => 'Invalid Plan Selected', 'note_type' => 'error']);;
@@ -58,7 +58,7 @@ class SubscriptionController extends Controller
 
     public function update_plans(Request $request){
 
-        $plan = Plan::where('name', '=', $request->plan)->first();
+        $plan = Plan::where('plan_id', '=', $request->plan)->first();
 
         if(!isset($plan->id)){
             return back()->withInput($request->all())->with(['note' => 'Invalid Plan Selected', 'note_type' => 'error']);;

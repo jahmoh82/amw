@@ -15,6 +15,10 @@ class Post extends Model
     }
 
     public function category(){
-    	return $this->belongsTo('Wave\Category');
+        return $this->belongsTo('Wave\Category');
+    }
+
+    public function author(){
+        return $this->belongsTo('App\User');
     }
 }

@@ -1,6 +1,6 @@
-body {
-    background-color: #f7f7f7 !important;
-}
+/*body {*/
+    /*background-color: #f7f7f7 !important;*/
+/*}*/
 .card-header {
     background: #fff;
     font-weight: 700;
@@ -14,9 +14,9 @@ body {
 /*}*/
 .navbar-light .navbar-nav .nav-link {
     color: #8e8e8e;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -.4px;
-    padding: 8px 15px;
+    padding: 13px;
     border-radius: 3px;
 }
 .navbar-light .navbar-nav .nav-item:not(:last-child) {
@@ -27,8 +27,27 @@ body {
     color: #333;
     background-color: rgba(0,0,0,0.03);
 }
+
+#notification-list #notification-icon {
+    padding: 25px;
+}
 #guestMenu .user-dropdown-li .dropdown-toggle:after{
     content: unset;
+}
+
+.bg-light .form-control,
+.bg-light .form-control ~ .input-group-append .input-group-text {
+    border-color: #f3f3f3;
+    background-color: #f3f3f3;
+    padding:23px;
+}
+.bg-light .form-control:focus,
+.bg-light .form-control:focus ~ .input-group-append .input-group-text {
+    background-color: #fff;
+}
+
+.bg-light .form-control ~ .input-group-append .input-group-text{
+    padding: .375rem .75rem;
 }
 /*custom floating label*/
 .form-signin {

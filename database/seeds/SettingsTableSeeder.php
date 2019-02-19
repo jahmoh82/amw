@@ -210,6 +210,17 @@ class SettingsTableSeeder extends Seeder
                 'order' => 12,
                 'group' => 'Billing',
             ),
+            16 =>
+            array (
+                'id' => 18,
+                'key' => 'site.search_placeholder',
+                'display_name' => 'search.placeholder',
+                'value' => 'search Sport events, Blog, Users',
+                'details' => NULL,
+                'type' => 'text',
+                'order' => 7,
+                'group' => 'Site',
+            ),
         ));
 
 

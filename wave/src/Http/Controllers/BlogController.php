@@ -32,7 +32,7 @@ class BlogController extends \App\Http\Controllers\Controller
             'seo_description' => $category->name . '- Blog',
         ];
 
-        return view('theme::blog.index', compact('posts', 'category', 'categories', 'seo'));
+        return view('theme::blog.index', compact('posts', 'category', 'categories', 'seo', 'users'));
     }
 
     public function post($category, $slug){

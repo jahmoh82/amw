@@ -54,7 +54,10 @@
                 <a class="navbar-brand" href="/"><img src="{{ Voyager::image(theme('logo')) }}" style="height:35px;"></a>
 
                 <div class="input-group py-1 px-2">
-                    <input class="form-control form-control-dark" type="text" placeholder="Search here..." aria-label="Search">
+                    <input class="form-control form-control-dark border-right-0 " type="text" placeholder="{{ setting('site.search_placeholder')  }}" aria-label="Search">
+                    <span class="input-group-append">
+                        <div class="input-group-text"><i class="fa fa-search"></i></div>
+                    </span>
                 </div>
 
 
@@ -76,6 +79,20 @@
 
                 <div class="collapse navbar-collapse navbar-right" id="guestMenu">
                     <ul class="navbar-nav ml-auto">
+                        <li class="dropdown user-dropdown-li">
+                            <a class="nav-link dropdown-toggle btn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>Add</span><i class="nav-link fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdown"><a href="http://127.0.0.1:8000/admin" class="dropdown-item"><i class="fa fa-bolt"></i> Admin</a>
+                                <a href="http://127.0.0.1:8000/@admin" class="dropdown-item"><i class="fa fa-user-o"></i> My Profile</a>
+                                <a href="http://127.0.0.1:8000/settings" class="dropdown-item"><i class="fa fa-cog"></i> Settings</a>
+                                <a href="http://127.0.0.1:8000/notifications" class="d-lg-none d-xl-none"><i class="fa fa-bell"></i> My Notifications</a>
+                                <a href="http://127.0.0.1:8000/logout" class="dropdown-item"><i class="fa fa-sign-out"></i> Logout</a>
+
+                            </div>
+
+                        </li>
+
                         @if(Auth::guest())
                             {!! menu('guest-menu', 'theme::menus.bootstrap') !!}
                             <li class="nav-login"><a href="/login">Login</a></li>
