@@ -34,6 +34,23 @@
 							<a href="{{ route('wave.blog.category', $cat->slug) }}" class="list-group-item pl-0 pr-0 border-0">{{ $cat->name }}</a>
 						@endforeach
 					</ul>
+
+					<a href="#" class="btn btn-outline-default">
+						First item
+					</a>
+
+					<div class="list-group">
+						<h4 class="list-group-item">List Group With Linked Items</h4>
+						<a href="#" class="list-group-item btn btn-outline-default">
+							First item
+							<button type="button" class="close fl-right" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<span class="badge">12</span>
+						</a>
+						<a href="#" class="list-group-item">Second item</a>
+						<a href="#" class="list-group-item">Third item</a>
+					</div>
 				</div>
 			</div>
 

@@ -59,97 +59,17 @@
                         <div class="input-group-text"><i class="fa fa-search"></i></div>
                     </span>
                 </div>
-
-
-                @if(!Auth::guest())
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            {!! menu('authenticated-menu', 'theme::menus.bootstrap') !!}
-                        </ul>
-                    </div>
-                @endif
-
-                <button class="navbar-toggler @if(Auth::guest()){{ 'nonauth' }}@endif" type="button" data-toggle="collapse" data-target="#guestMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                <button class="navbar-toggler nonauth" type="button" data-toggle="collapse" data-target="#guestMenu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <div class="collapse navbar-collapse navbar-right" id="guestMenu">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="dropdown user-dropdown-li">
-                            <a class="nav-link dropdown-toggle btn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span>Add</span><i class="nav-link fa fa-plus-circle" aria-hidden="true"></i>
-                            </a>
-                            <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdown"><a href="http://127.0.0.1:8000/admin" class="dropdown-item"><i class="fa fa-bolt"></i> Admin</a>
-                                <a href="http://127.0.0.1:8000/@admin" class="dropdown-item"><i class="fa fa-user-o"></i> My Profile</a>
-                                <a href="http://127.0.0.1:8000/settings" class="dropdown-item"><i class="fa fa-cog"></i> Settings</a>
-                                <a href="http://127.0.0.1:8000/notifications" class="d-lg-none d-xl-none"><i class="fa fa-bell"></i> My Notifications</a>
-                                <a href="http://127.0.0.1:8000/logout" class="dropdown-item"><i class="fa fa-sign-out"></i> Logout</a>
-
-                            </div>
-
-                        </li>
-
-                        @if(Auth::guest())
-                            {!! menu('guest-menu', 'theme::menus.bootstrap') !!}
-                            <li class="nav-login"><a href="/login">Login</a></li>
-                            <li>
-                                <a href="/register"><button class="btn btn-primary">Sign Up</button></a>
-                            </li>
-                        @else
-
-
-                            @if( auth()->user()->onTrial() )
-                                <li><span class="trial-days">You have {{ auth()->user()->daysLeftOnTrial() }} @if(auth()->user()->daysLeftOnTrial() > 1){{ 'Days' }}@else{{ 'Day' }}@endif left on your @if(auth()->user()->subscription('main') && auth()->user()->subscription('main')->onTrial()){{ ucfirst(auth()->user()->role->name) . ' Plan' }}@else{{ 'Free' }}@endif Trial</span></li>
-                            @endif
-
-                            @if( auth()->user()->subscribed('main') && auth()->user()->subscription('main')->onGracePeriod() && !auth()->user()->onTrial() )
-                                <li><span class="trial-days">You have {{ auth()->user()->daysLeftOnGrace() }} @if(auth()->user()->daysLeftOnTrial() > 1){{ 'Days' }}@else{{ 'Day' }}@endif left on your {{ ucfirst(auth()->user()->role->name) . ' Plan' }}</span></li>
-                            @endif
-
-                            @if(!Request::is('notifications'))
-                                @include('theme::partials.notifications')
-                            @endif
-
-                            <li class="dropdown user-dropdown-li">
-
-                                <a class="nav-link dropdown-toggle user-icon" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="{{ Voyager::image(Auth::user()->avatar) }}">
-                                </a>
-                                <div class="dropdown-menu user-dropdown" aria-labelledby="navbarDropdown">
-
-                                    <div class="user-dropdown-info">
-                                        <img src="{{ Voyager::image(Auth::user()->avatar) }}">
-                                        <div>
-                                            <p>{{ Auth::user()->name }}</p>
-                                            <span>{{ Auth::user()->username }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="user-dropdown-plan text-center"><div class="badge badge-success badge-plan"  style="background:#{{ stringToColorCode(auth()->user()->role->display_name) }}">{{ auth()->user()->role->display_name }}</div></div>
-                                    @if( auth()->user()->onTrial() && !auth()->user()->subscription('main') )
-                                        <a href="{{ route('wave.settings', 'plans') }}" class="dropdown-item"><span uk-icon="icon: cloud-upload"></span>Upgrade My Account</a>
-                                    @endif
-                                    @if(Voyager::can('browse_admin'))
-                                        <a href="{{ route('voyager.dashboard') }}" class="dropdown-item"><i class="fa fa-bolt"></i> Admin</a>
-                                    @endif
-                                    <a href="{{ route('wave.profile', Auth::user()->username) }}" class="dropdown-item"><i class="fa fa-user-o"></i> My Profile</a>
-                                    <a href="{{ route('wave.settings') }}" class="dropdown-item"><i class="fa fa-cog"></i> Settings</a>
-                                    <a href="{{ route('wave.notifications') }}" class="d-lg-none d-xl-none"><i class="fa fa-bell"></i> My Notifications</a>
-                                    <a href="{{ route('logout') }}" class="dropdown-item"><i class="fa fa-sign-out"></i> Logout</a>
-
-                                </div>
-
-                            </li>
-
-                        @endif
-                    </ul>
+                    @if(Auth::guest())
+                        {!! menu('guest-menu', 'theme::menus.bootstrap') !!}
+                    @else
+                        {!! menu('authenticated-menu', 'theme::menus.bootstrap_auth') !!}
+                    @endif
                 </div>
-
-
-
             </div>
         </nav>
 
