@@ -39,11 +39,7 @@ class LoginController extends \App\Http\Controllers\Controller
     }
 
     public function username(){
-        if(setting('auth.email_or_username')){
-            return setting('auth.email_or_username');
-        }
-
-        return 'email';
+        return !empty(setting('auth.email_or_username')) ? setting('auth.email_or_username') : 'email';
     }
 
     public function showLoginForm()

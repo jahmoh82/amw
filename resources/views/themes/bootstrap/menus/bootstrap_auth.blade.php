@@ -103,9 +103,8 @@
             @if( auth()->user()->onTrial() && !auth()->user()->subscription('main') )
                 <a href="{{ route('wave.settings', 'plans') }}" class="dropdown-item"><span uk-icon="icon: cloud-upload"></span>Upgrade My Account</a>
             @endif
-            @if(Voyager::can('browse_admin'))
-                <a href="{{ route('voyager.dashboard') }}" class="dropdown-item"><i class="fa fa-bolt"></i> Admin</a>
-            @endif
+            
+            <a href="{{ route('voyager.dashboard') }}" class="dropdown-item"><i class="fa fa-bolt"></i> Admin</a>
             <a href="{{ route('wave.profile', Auth::user()->username) }}" class="dropdown-item"><i class="fa fa-user-o"></i> My Profile</a>
             <a href="{{ route('wave.settings') }}" class="dropdown-item"><i class="fa fa-cog"></i> Settings</a>
             <a href="{{ route('wave.notifications') }}" class="d-lg-none d-xl-none"><i class="fa fa-bell"></i> My Notifications</a>

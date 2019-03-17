@@ -214,7 +214,7 @@ class SettingsTableSeeder extends Seeder
             array (
                 'id' => 18,
                 'key' => 'site.search_placeholder',
-                'display_name' => 'search.placeholder',
+                'display_name' => 'Main search Placeholder text',
                 'value' => 'search Sport events, Blog, Users',
                 'details' => NULL,
                 'type' => 'text',

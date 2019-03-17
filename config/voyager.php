@@ -12,9 +12,9 @@ return [
 
     'user' => [
         'add_default_role_on_register' => true,
-        'default_role'                 => 'trial',
-        'namespace'                    => App\User::class,
-        'default_avatar'               => 'users/default.png',
+        'default_role' => 'trial',
+        'namespace' => App\User::class,
+        'default_avatar' => 'users/default.png',
     ],
 
     /*
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'assets_path' => '/vendor/tcg/voyager/assets',
+    // 'assets_path' => '/vendor/tcg/voyager/assets',
 
     /*
     |--------------------------------------------------------------------------
@@ -66,7 +66,7 @@ return [
     */
 
     'storage' => [
-        'disk' => 'public',
+        'disk' => env('FILESYSTEM_DRIVER', 'public'),
     ],
 
     /*
@@ -78,7 +78,30 @@ return [
     |
     */
 
+    'media' => [
+        // The allowed mimetypes to be uploaded through the media-manager.
+        'allowed_mimetypes' => '*', //All types can be uploaded
+
+        /*'allowed_mimetypes' => [
+            'image/jpeg',
+            'image/png',
+            'image/gif',
+            'image/bmp',
+            'video/mp4',
+        ],*/
+
+        //Path for media-manager. Relative to the filesystem.
+        'path' => '/',
+        'show_folders' => true,
+        'allow_upload' => true,
+        'allow_move' => true,
+        'allow_delete' => true,
+        'allow_create_folder' => true,
+        'allow_rename' => true,
+    ],
+
     'hidden_files' => false,
+    'compass_in_production' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -124,7 +147,7 @@ return [
         /*
          * Set whether or not the multilingual is supported by the BREAD input.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * Select default language
@@ -153,17 +176,17 @@ return [
         // Add custom list items to navbar's dropdown
         'navbar_items' => [
             'Profile' => [
-                'route'      => 'voyager.profile',
-                'classes'    => 'class-full-of-rum',
+                'route' => 'voyager.profile',
+                'classes' => 'class-full-of-rum',
                 'icon_class' => 'voyager-person',
             ],
             'Home' => [
-                'route'        => '/',
-                'icon_class'   => 'voyager-home',
+                'route' => '/',
+                'icon_class' => 'voyager-home',
                 'target_blank' => true,
             ],
             'Logout' => [
-                'route'      => 'voyager.logout',
+                'route' => 'voyager.logout',
                 'icon_class' => 'voyager-power',
             ],
         ],
@@ -173,7 +196,6 @@ return [
             'TCG\\Voyager\\Widgets\\PostDimmer',
             'TCG\\Voyager\\Widgets\\PageDimmer',
         ],
-
     ],
 
     /*
@@ -214,12 +236,11 @@ return [
     ],
 
     'googlemaps' => [
-         'key'    => env('GOOGLE_MAPS_KEY', ''),
-         'center' => [
-             'lat' => env('GOOGLE_MAPS_DEFAULT_CENTER_LAT', '32.715738'),
-             'lng' => env('GOOGLE_MAPS_DEFAULT_CENTER_LNG', '-117.161084'),
-         ],
-         'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
-     ],
-
+        'key' => env('GOOGLE_MAPS_KEY', ''),
+        'center' => [
+            'lat' => env('GOOGLE_MAPS_DEFAULT_CENTER_LAT', '32.715738'),
+            'lng' => env('GOOGLE_MAPS_DEFAULT_CENTER_LNG', '-117.161084'),
+        ],
+        'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
+    ],
 ];

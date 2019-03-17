@@ -9,18 +9,19 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "binarytorch/larecipe": "1.2.3",
+        "binarytorch/larecipe": "1.4.0",
         "devdojo/app": "^0.10.0",
         "fideloper/proxy": "~4.0",
         "intervention/image": "^2.4",
         "lab404/laravel-impersonate": "^1.2",
         "laravel-frontend-presets/uikit3": "^0.0.8",
         "laravel/cashier": "~7.0",
-        "laravel/framework": "5.6.*",
+        "laravel/framework": "5.8.3",
         "laravel/tinker": "~1.0",
         "orangehill/iseed": "dev-master",
-        "tcg/voyager": "1.1.*",
-        "tymon/jwt-auth": "1.0.0-rc.2",
+        "tcg/voyager": "^1.2",
+        "tymon/jwt-auth": "1.0.0-rc.4",
+        "uikit/uikit": "^2.27",
         "voyager-themes": "^0.15"
     },
     "require-dev": {
